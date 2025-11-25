@@ -10,9 +10,9 @@
             Console.WriteLine($"[EVENT] Added: {item.GetInfo()}");
         };
 
-        bool running = true;
+        bool exit = false;
 
-        while (running)
+        while (!exit)
         {
             Console.WriteLine("\n=== MEDIA PLAYER MENU ===");
             Console.WriteLine("1. Add Song");
@@ -31,7 +31,6 @@
                 switch (choice)
                 {
                     case 1:
-                        
                         AddSong(manager);
                         break;
 
@@ -53,7 +52,8 @@
                         break;
 
                     case 6:
-                        running = false;
+                        Console.Clear();
+                        exit = true;
                         break;
 
                     default:
