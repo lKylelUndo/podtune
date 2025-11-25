@@ -12,3 +12,4 @@ C:\Users\User\Desktop\podtune\MyApp\obj\Debug\net9.0\refint\MyApp.dll
 C:\Users\User\Desktop\podtune\MyApp\obj\Debug\net9.0\MyApp.pdb
 C:\Users\User\Desktop\podtune\MyApp\obj\Debug\net9.0\MyApp.genruntimeconfig.cache
 C:\Users\User\Desktop\podtune\MyApp\obj\Debug\net9.0\ref\MyApp.dll
+C:\Users\User\Desktop\podtune\MyApp\obj\Debug\net9.0\MyApp.sourcelink.json
