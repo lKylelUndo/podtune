@@ -21,12 +21,13 @@ class PlaylistManager
 
     public void PlayAll()
     {
+        Console.Clear();
         playlist.ForEach(item => item.Play()); // Lambda Expression
     }
 
-    public void SaveToFile(string path)
+    public void SaveToFile()
     {
-        using StreamWriter writer = new StreamWriter(path);
+        using StreamWriter writer = new StreamWriter("playlist.txt");
 
         foreach (var item in playlist)
         {

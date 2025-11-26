@@ -43,7 +43,7 @@
                         break;
 
                     case 4:
-                        manager.SaveToFile("playlist.txt");
+                        manager.SaveToFile();
                         Console.WriteLine("Saved to playlist.txt");
                         break;
 
