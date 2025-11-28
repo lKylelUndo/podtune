@@ -48,7 +48,7 @@
                         break;
 
                     case 5:
-                        manager.LoadFromFile("playlist.txt");
+                        manager.LoadFromFile();
                         break;
 
                     case 6:

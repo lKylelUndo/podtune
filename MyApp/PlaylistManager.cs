@@ -35,7 +35,7 @@ class PlaylistManager
         }
     }
 
-    public void LoadFromFile(string path)
+    public void LoadFromFile(string path = "playlist.txt")
     {
         if (!File.Exists(path))
             throw new FileNotFoundException("Playlist file not found.");
