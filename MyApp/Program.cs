@@ -17,10 +17,12 @@
             Console.WriteLine("\n=== MEDIA PLAYER MENU ===");
             Console.WriteLine("1. Add Song");
             Console.WriteLine("2. Add Podcast");
-            Console.WriteLine("3. Play All");
-            Console.WriteLine("4. Save to File");
-            Console.WriteLine("5. Load from File");
-            Console.WriteLine("6. Exit");
+            Console.WriteLine("3. Delete Song");
+            Console.WriteLine("4. Delete Podcast");
+            Console.WriteLine("5. Play All");
+            Console.WriteLine("6. Save to File");
+            Console.WriteLine("7. Load from File");
+            Console.WriteLine("8. Exit");
             Console.Write("Choose option: ");
 
             try
@@ -39,19 +41,27 @@
                         break;
 
                     case 3:
-                        manager.PlayAll();
+                        DeleteSong(manager);
                         break;
 
                     case 4:
+                        DeletePodcast(manager);
+                        break;
+
+                    case 5:
+                        manager.PlayAll();
+                        break;
+
+                    case 6:
                         manager.SaveToFile();
                         Console.WriteLine("Saved to playlist.txt");
                         break;
 
-                    case 5:
+                    case 7:
                         manager.LoadFromFile();
                         break;
 
-                    case 6:
+                    case 8:
                         Console.Clear();
                         exit = true;
                         break;
@@ -102,5 +112,45 @@
         int episode = int.Parse(Console.ReadLine());
 
         manager.AddMedia(new Podcast(title, artist, duration, episode));
+    }
+
+    static void DeleteSong(PlaylistManager manager)
+    {
+        manager.ShowSongs();
+
+        Console.Write("\nEnter the song number to delete: ");
+        if (int.TryParse(Console.ReadLine(), out int number))
+        {
+            bool success = manager.DeleteSongByNumber(number);
+            Console.Clear();
+            Console.WriteLine(success
+                ? "Song deleted from playlist."
+                : "Invalid selection. No song deleted.");
+        }
+        else
+        {
+            Console.Clear();
+            Console.WriteLine("Invalid input. Please enter a number.");
+        }
+    }
+
+    static void DeletePodcast(PlaylistManager manager)
+    {
+        manager.ShowPodcasts();
+
+        Console.Write("\nEnter the podcast number to delete: ");
+        if (int.TryParse(Console.ReadLine(), out int number))
+        {
+            bool success = manager.DeletePodcastByNumber(number);
+            Console.Clear();
+            Console.WriteLine(success
+                ? "Podcast deleted from playlist."
+                : "Invalid selection. No podcast deleted.");
+        }
+        else
+        {
+            Console.Clear();
+            Console.WriteLine("Invalid input. Please enter a number.");
+        }
     }
 }
